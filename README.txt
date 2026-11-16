@@ -1,6 +1,20 @@
-CARA PAKAI
-1. Buka config.js, ganti semua isi (nama, tagline, project, organisasi, kontak).
-2. Taruh file CV kamu bernama  cv.pdf  di folder ini (sejajar index.html).
-3. Taruh foto & gambar sertifikat/screenshot di folder  assets/  lalu isi path-nya di config.js.
-4. Cek lokal: klik dua kali index.html.
-5. Deploy: drag-and-drop SELURUH folder ini ke Netlify Drop (app.netlify.com/drop), atau upload ke Vercel.
+PORTFOLIO WEBSITE
+
+Struktur:
+- index.html: halaman utama website
+- config.js: data profil, project, pengalaman, dan kontak
+- assets/: gambar, ikon, dan sertifikat
+- cv.pdf: CV yang dapat diunduh
+
+Menjalankan secara lokal:
+Buka index.html melalui browser. Untuk hasil yang lebih konsisten, jalankan folder ini menggunakan ekstensi Live Server di Visual Studio Code.
+
+Deploy:
+Hubungkan repository GitHub ke Cloudflare Pages dengan pengaturan:
+- Framework preset: None
+- Build command: kosong
+- Build output directory: .
+- Root directory: kosong
+
+Pembaruan konten:
+Edit data pada config.js. Jangan menghapus elemen atau fungsi pada index.html jika belum memahami ketergantungannya.

@@ -1,26 +1,15 @@
-/* =====================================================================
-   KONFIGURASI PORTOFOLIO — edit HANYA file ini, kode desain tidak perlu disentuh.
-
-   DUA BAHASA: teks yang tampil di website boleh ditulis { id: "...", en: "..." }.
-     Kalau ditulis teks biasa saja ("..."), teks yang sama dipakai di kedua bahasa.
-   CARA MENAMBAH PROJECT  : salin satu blok { ... } di "projects", lalu ganti isinya.
-   CARA MENAMBAH ORGANISASI: salin satu blok { ... } di "orgs", lalu ganti isinya.
-   CARA MENAMBAH TECH STACK: tambah { name: "Nama", icon: "assets/icons/file.svg" } di "stack".
-     (atau icon: "react" untuk memakai ikon dari https://devicon.dev, butuh internet)
-   FOTO / SERTIFIKAT / THUMBNAIL: taruh gambar di folder "assets/", lalu isi path-nya.
-   CV: taruh file PDF bernama cv.pdf di folder yang sama dengan index.html.
-   ===================================================================== */
+/* Data konten dan konfigurasi website portfolio. */
 window.SITE = {
   name: "Matthew Kenzo Ananta",
-  handle: "kenzo",                    // tampil sebagai "kenzo.dev"
-  role: ["Frontend", "Developer"],    // kata ke-2 tampil abu/outline
+  handle: "kenzo",
+  role: ["Frontend", "Developer"],
   tagline: {
     id: "Mahasiswa Teknik Informatika UDINUS Kediri yang tertarik membangun website, desain visual, dan konten digital.",
     en: "Informatics student at UDINUS Kediri who enjoys building websites, visual design, and digital content."
   },
-  photo: "assets/foto.jpg",           // foto di kartu ID (alternatif: "assets/foto-formal.jpg")
-  cutout: "assets/foto-cutout-warna.webp",  // foto tanpa latar untuk bagian About (versi hitam-putih: "assets/foto-cutout.webp")
-  qr: "assets/qr-wa.png",             // QR WhatsApp di belakang kartu ID (klik kartu untuk membalik)
+  photo: "assets/foto.jpg",
+  cutout: "assets/foto-cutout-warna.webp",
+  qr: "assets/qr-wa.png",
   cv: "cv.pdf",
 
   about: {
@@ -51,7 +40,7 @@ window.SITE = {
       },
       tech: ["HTML", "CSS", "JavaScript", "Cloudflare Pages"],
       thumb: "assets/wingzkay.jpg",
-      embed: true                     // isi false jika website memblokir iframe
+      embed: true
     },
     {
       title: "KDR Restaurant",
@@ -94,12 +83,6 @@ window.SITE = {
       embed: true
     }
   ],
-
-  // IMPACT: tampil di bawah kartu project (tab Projects). Semua teks bisa { id, en }.
-  // Cara menambah: salin satu blok { icon, title, desc, projects } di "items".
-  // icon yang tersedia: "chat", "clock", "check", "globe". "projects" = nama singkat project yang terkait.
-  // Catatan: sengaja berisi dampak kualitatif (fungsi website). Kalau kamu punya angka asli
-  // (mis. jumlah pesanan/pengunjung), tambahkan ke desc agar lebih meyakinkan.
   impact: {
     label: "Impact",
     title: { id: "Dampak dari website yang saya buat", en: "The impact of the websites I build" },
@@ -132,7 +115,6 @@ window.SITE = {
   },
 
   orgs: [
-    // cert = gambar sertifikat (klik untuk memperbesar), certThumb = versi kecil untuk kartu, certPdf = file PDF hasil scan
     { role: { id: "Anggota OSIS UKS", en: "OSIS UKS Member" },
       org: "OSIS SMA Katolik St. Augustinus · Sekbid 8 UKS & Adiwiyata", period: "2023 – 2024",
       duty: { id: "Terlibat dalam program kesehatan sekolah dan kegiatan Adiwiyata.", en: "Took part in school health programs and Adiwiyata activities." },
@@ -196,9 +178,9 @@ window.SITE = {
     { name: "MS Office", icon: "assets/icons/office.png" }
   ],
 
-  contact: {                          // isi username saja (tanpa @ / URL); kosong = disembunyikan
+  contact: {
     email: "matthewkenzo57@gmail.com",
-    whatsapp: "6281231501360",        // format internasional, tanpa + dan 0 di depan
+    whatsapp: "6281231501360",
     instagram: "kenzouuuuu_uuuuuu", github: "", linkedin: ""
   }
 };
