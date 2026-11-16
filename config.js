@@ -1,15 +1,26 @@
+/* =====================================================================
+   KONFIGURASI PORTOFOLIO — edit HANYA file ini, kode desain tidak perlu disentuh.
 
+   DUA BAHASA: teks yang tampil di website boleh ditulis { id: "...", en: "..." }.
+     Kalau ditulis teks biasa saja ("..."), teks yang sama dipakai di kedua bahasa.
+   CARA MENAMBAH PROJECT  : salin satu blok { ... } di "projects", lalu ganti isinya.
+   CARA MENAMBAH ORGANISASI: salin satu blok { ... } di "orgs", lalu ganti isinya.
+   CARA MENAMBAH TECH STACK: tambah { name: "Nama", icon: "assets/icons/file.svg" } di "stack".
+     (atau icon: "react" untuk memakai ikon dari https://devicon.dev, butuh internet)
+   FOTO / SERTIFIKAT / THUMBNAIL: taruh gambar di folder "assets/", lalu isi path-nya.
+   CV: taruh file PDF bernama cv.pdf di folder yang sama dengan index.html.
+   ===================================================================== */
 window.SITE = {
   name: "Matthew Kenzo Ananta",
-  handle: "kenzo",
-  role: ["Frontend", "Developer"],
+  handle: "kenzo",                    // tampil sebagai "kenzo.dev"
+  role: ["Frontend", "Developer"],    // kata ke-2 tampil abu/outline
   tagline: {
     id: "Mahasiswa Teknik Informatika UDINUS Kediri yang tertarik membangun website, desain visual, dan konten digital.",
     en: "Informatics student at UDINUS Kediri who enjoys building websites, visual design, and digital content."
   },
-  photo: "assets/foto.jpg",
-  cutout: "assets/foto-cutout-warna.webp",
-  qr: "assets/qr-wa.png",
+  photo: "assets/foto.jpg",           // foto di kartu ID (alternatif: "assets/foto-formal.jpg")
+  cutout: "assets/foto-cutout-warna.webp",  // foto tanpa latar untuk bagian About (versi hitam-putih: "assets/foto-cutout.webp")
+  qr: "assets/qr-wa.png",             // QR WhatsApp di belakang kartu ID (klik kartu untuk membalik)
   cv: "cv.pdf",
 
   about: {
@@ -24,8 +35,8 @@ window.SITE = {
   projects: [
     {
       title: "Wingzkay Dance",
-      url: "https://wingzkay.pages.dev",
       github: "https://github.com/Siroi505/wingzkay",
+      url: "https://wingzkay.pages.dev",
       desc: {
         id: "Website personal branding untuk dancer dan pengajar dance di Kediri: kelas Modern Dance dan K-pop.",
         en: "Personal branding website for a dancer and dance instructor in Kediri: Modern Dance and K-pop classes."
@@ -40,12 +51,12 @@ window.SITE = {
       },
       tech: ["HTML", "CSS", "JavaScript", "Cloudflare Pages"],
       thumb: "assets/wingzkay.jpg",
-      embed: true
+      embed: true                     // isi false jika website memblokir iframe
     },
     {
       title: "KDR Restaurant",
-      url: "https://kdr-restaurant.pages.dev",
       github: "https://github.com/Siroi505/kdr-restaurant",
+      url: "https://kdr-restaurant.pages.dev",
       desc: {
         id: "Website menu restoran bertema gelap dengan pencarian menu, keranjang, dan pemesanan lewat WhatsApp.",
         en: "Dark-themed restaurant menu website with menu search, a cart, and ordering via WhatsApp."
@@ -64,8 +75,8 @@ window.SITE = {
     },
     {
       title: "Aruna Grand Hotel",
-      url: "https://aruna-grand-hotel.pages.dev",
       github: "https://github.com/Siroi505/aruna-grand-hotel",
+      url: "https://aruna-grand-hotel.pages.dev",
       desc: {
         id: "Website demo hotel bintang lima dengan cek ketersediaan kamar, reservasi lewat WhatsApp, dan panel admin.",
         en: "Demo website for a five-star hotel with room availability search, WhatsApp reservations, and an admin panel."
@@ -84,7 +95,44 @@ window.SITE = {
     }
   ],
 
+  // IMPACT: tampil di bawah kartu project (tab Projects). Semua teks bisa { id, en }.
+  // Cara menambah: salin satu blok { icon, title, desc, projects } di "items".
+  // icon yang tersedia: "chat", "clock", "check", "globe". "projects" = nama singkat project yang terkait.
+  // Catatan: sengaja berisi dampak kualitatif (fungsi website). Kalau kamu punya angka asli
+  // (mis. jumlah pesanan/pengunjung), tambahkan ke desc agar lebih meyakinkan.
+  impact: {
+    label: "Impact",
+    title: { id: "Dampak dari website yang saya buat", en: "The impact of the websites I build" },
+    intro: {
+      id: "Setiap project dibuat untuk membantu pemilik usaha dan pengunjungnya terhubung dengan lebih cepat dan jelas.",
+      en: "Each project is built to help business owners and their visitors connect faster and more clearly."
+    },
+    items: [
+      { icon: "chat",
+        title: { id: "Kontak jadi satu langkah", en: "Contact in one step" },
+        desc: { id: "Pesanan, reservasi, dan booking kelas dikirim lewat WhatsApp dengan pesan yang sudah tersusun, jadi calon pelanggan tidak perlu mengetik dari nol.",
+                en: "Orders, reservations, and class bookings go through WhatsApp with a ready-made message, so customers don’t have to type from scratch." },
+        projects: ["Wingzkay", "KDR", "Aruna"] },
+      { icon: "clock",
+        title: { id: "Informasi tersedia kapan saja", en: "Information available anytime" },
+        desc: { id: "Menu, kelas, kamar, dan fasilitas bisa dilihat kapan saja dari HP atau laptop, sehingga pemilik usaha tidak perlu menjelaskan hal yang sama berulang kali.",
+                en: "Menus, classes, rooms, and facilities can be viewed anytime from a phone or laptop, so owners don’t have to explain the same things again and again." },
+        projects: ["Wingzkay", "KDR", "Aruna"] },
+      { icon: "check",
+        title: { id: "Permintaan lebih jelas", en: "Clearer requests" },
+        desc: { id: "Filter, pencarian, keranjang, dan cek ketersediaan membantu pengunjung memilih sendiri lebih dulu, sehingga pesan yang masuk lebih lengkap dan jelas.",
+                en: "Filters, search, a cart, and availability checks let visitors decide on their own first, so incoming requests are more complete and clear." },
+        projects: ["KDR", "Aruna"] },
+      { icon: "globe",
+        title: { id: "Menjangkau pengunjung lokal & asing", en: "Reaching local & international visitors" },
+        desc: { id: "Pilihan bahasa Indonesia dan Inggris membuat informasi mudah dipahami oleh pengunjung lokal maupun mancanegara.",
+                en: "Indonesian and English options make the information easy to understand for local and international visitors alike." },
+        projects: ["Wingzkay", "KDR", "Aruna"] }
+    ]
+  },
+
   orgs: [
+    // cert = gambar sertifikat (klik untuk memperbesar), certThumb = versi kecil untuk kartu, certPdf = file PDF hasil scan
     { role: { id: "Anggota OSIS UKS", en: "OSIS UKS Member" },
       org: "OSIS SMA Katolik St. Augustinus · Sekbid 8 UKS & Adiwiyata", period: "2023 – 2024",
       duty: { id: "Terlibat dalam program kesehatan sekolah dan kegiatan Adiwiyata.", en: "Took part in school health programs and Adiwiyata activities." },
@@ -143,14 +191,14 @@ window.SITE = {
 
   stack: [
     { name: "HTML", icon: "assets/icons/html5.svg" }, { name: "CSS", icon: "assets/icons/css3.svg" },
-    { name: "JavaScript", icon: "assets/icons/javascript.svg" }, { name: "Netlify", icon: "assets/icons/netlify.svg" },
+    { name: "JavaScript", icon: "assets/icons/javascript.svg" }, { name: "Cloudflare Pages", icon: "cloudflare" },
     { name: "Canva", icon: "assets/icons/canva.svg" }, { name: "CapCut", icon: "assets/icons/capcut.png" },
     { name: "MS Office", icon: "assets/icons/office.png" }
   ],
 
-  contact: {
+  contact: {                          // isi username saja (tanpa @ / URL); kosong = disembunyikan
     email: "matthewkenzo57@gmail.com",
-    whatsapp: "6281231501360",
+    whatsapp: "6281231501360",        // format internasional, tanpa + dan 0 di depan
     instagram: "kenzouuuuu_uuuuuu", github: "", linkedin: ""
   }
 };
